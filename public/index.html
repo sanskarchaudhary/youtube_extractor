@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Data Extractor</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <header>
+            <h1><i class="fab fa-youtube" style="color: #ff0000; margin-right: 10px;"></i>YT Extractor</h1>
+            <p class="subtitle">Extract hidden metadata and analytics with ease</p>
+        </header>
+
+        <div class="cards-container">
+            <!-- Video Card -->
+            <div class="card">
+                <h2><i class="fas fa-video"></i> Video Extractor</h2>
+                <div class="input-group">
+                    <i class="fas fa-link input-icon"></i>
+                    <input type="text" id="videoUrl" placeholder="Paste Video URL here...">
+                </div>
+                <button id="videoBtn">
+                    <span id="videoSpinner" class="spinner"></span>
+                    <span id="videoBtnText">Extract Info</span>
+                </button>
+                <div id="videoResult" class="result"></div>
+                <button id="videoDownload" class="download-btn">
+                    <i class="fas fa-file-excel"></i> Download Excel
+                </button>
+            </div>
+
+            <!-- Channel Card -->
+            <div class="card">
+                <h2><i class="fas fa-user-circle"></i> Channel Extractor</h2>
+                <div class="input-group">
+                    <i class="fas fa-link input-icon"></i>
+                    <input type="text" id="channelUrl" placeholder="Paste Channel URL here...">
+                </div>
+                <button id="channelBtn">
+                    <span id="channelSpinner" class="spinner"></span>
+                    <span id="channelBtnText">Extract Info</span>
+                </button>
+                <div id="channelResult" class="result"></div>
+                <button id="channelDownload" class="download-btn">
+                    <i class="fas fa-file-excel"></i> Download Excel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i id="toast-icon" class="fas"></i>
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
