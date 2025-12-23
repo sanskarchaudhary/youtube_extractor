@@ -4,12 +4,17 @@ const cors = require('cors');
 const ExcelJS = require('exceljs');
 const { extractVideoData, extractChannelData } = require('./extractor');
 
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.post('/api/video', async (req, res) => {
     try {
